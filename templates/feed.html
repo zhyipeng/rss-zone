@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>{{ channel.title }}</title>
+        <link>{{ channel.link }}</link>
+        <description>{{ channel.description }}</description>
+        <pubDate>{{ channel.formatted_updated }}</pubDate>
+        {% for item in feeds %}
+            <item>
+                <title>{{ item.title }}</title>
+                <link>{{ item.link }}</link>
+                <description>{{ item.description }}</description>
+                <author>{{ item.author }}</author>
+                <pubDate>{{ item.formatted_updated }}</pubDate>
+            </item>
+        {% endfor %}
+    </channel>
+</rss>
